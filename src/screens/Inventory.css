@@ -1,0 +1,13 @@
+.form {
+  display: inline;
+  flex-direction: column;
+}
+
+.input {
+  padding: 0 0 1em 0;
+  border: 0em;
+}
+
+/* .input:hover {
+  background-color: black;
+} */

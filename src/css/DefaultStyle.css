@@ -1,0 +1,21 @@
+body {
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.header {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  /* color: white; */
+  padding: 2em 0 0 2em;
+}
+
+.inputForm {
+  background-color: rgb(238, 244, 244);
+  padding: 1em 1em 2em 1em;
+  color: rgb(40, 111, 135);
+}
