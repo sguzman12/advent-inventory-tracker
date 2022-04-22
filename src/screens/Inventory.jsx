@@ -13,7 +13,13 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 function Inventory() {
-  const options = ["Hola", "Mundo"];
+  const handleSubmit = (event) => {
+    console.log("Inside handleSubmit");
+  };
+
+  const handleCancel = () => {
+    console.log("Inside handleCancel");
+  };
   return (
     <Box className="form">
       {/* <img src={logo} alt="logo" /> */}
@@ -26,8 +32,17 @@ function Inventory() {
       <Box className="input">
         <TextArea label="AHS Serial #s" />
       </Box>
-      <Box>
-        <ActionButton />
+      <Box className="form_buttons">
+        <ActionButton
+          label="Submit"
+          onClick={(event) => handleSubmit(event)}
+          color="primary"
+        />
+        <ActionButton
+          label="Cancel"
+          onClick={() => handleCancel()}
+          color="secondary"
+        />
       </Box>
     </Box>
   );

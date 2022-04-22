@@ -11,3 +11,8 @@
 /* .input:hover {
   background-color: black;
 } */
+
+.form_buttons {
+  align-items: flex-end;
+  justify-content: right;
+}
