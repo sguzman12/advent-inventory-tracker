@@ -15,7 +15,7 @@ function Dropdown(props) {
   const { data, label } = props;
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
   const handleClick = () => {
     console.info(`You clicked ${data[selectedIndex]}`);
   };
@@ -58,7 +58,7 @@ function Dropdown(props) {
         anchorEl={anchorRef.current}
         role={undefined}
         transition
-        disablePortal
+        placement="bottom-end"
       >
         {({ TransitionProps, placement }) => (
           <Grow
@@ -74,7 +74,6 @@ function Dropdown(props) {
                   {data.map((option, index) => (
                     <MenuItem
                       key={option}
-                      disabled={index === 2}
                       selected={index === selectedIndex}
                       onClick={(event) => handleMenuItemClick(event, index)}
                     >
