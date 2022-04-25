@@ -4,13 +4,19 @@ import PropTypes from "prop-types";
 
 function ActionButton(props) {
   const { label, onClick, color } = props;
-  const handleOnClick = () => {
+  const handleOnClick = (e) => {
     if (onClick) {
-      onClick();
+      onClick(e);
     }
   };
   return (
-    <Fab variant="extended" color={color} onClick={handleOnClick}>
+    <Fab
+      variant="extended"
+      color={color}
+      onClick={(event) => handleOnClick(event)}
+      value={label}
+      name={label}
+    >
       {label}
     </Fab>
   );

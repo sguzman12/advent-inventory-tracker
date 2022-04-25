@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -13,14 +13,18 @@ import MenuList from "@mui/material/MenuList";
 
 function Dropdown(props) {
   const { data, label } = props;
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [item, setItem] = useState("Central Supply");
+
   const handleClick = () => {
     console.info(`You clicked ${data[selectedIndex]}`);
   };
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
+    setItem(data[index]);
+    console.log(item);
     setOpen(false);
   };
   const handleToggle = () => {
@@ -31,6 +35,10 @@ function Dropdown(props) {
       return;
     }
     setOpen(false);
+  };
+
+  const handleOnChange = (event) => {
+    console.log(event);
   };
   /* eslint-disable react/jsx-props-no-spreading */
   return (
