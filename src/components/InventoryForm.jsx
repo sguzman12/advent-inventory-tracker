@@ -20,7 +20,8 @@ function InventoryForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    console.log(e);
+
     // setItem(e)
     // props.addItem(item);
     // console.log(item);
@@ -49,6 +50,7 @@ function InventoryForm(props) {
           <Dropdown
             label="Equipment Location"
             data={locations.data}
+            // onChange
             // value={(e) => handleDropdown(e)}
           />
         </Box>

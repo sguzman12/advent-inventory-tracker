@@ -22,6 +22,7 @@ function Dropdown(props) {
     console.info(`You clicked ${data[selectedIndex]}`);
   };
   const handleMenuItemClick = (event, index, option) => {
+    console.log(option);
     setSelectedIndex(index);
     setItem(option);
     setOpen(false);
@@ -78,7 +79,8 @@ function Dropdown(props) {
                   {data.map((option, index) => (
                     <MenuItem
                       key={option}
-                      value={option}
+                      value={item}
+                      name={item}
                       selected={index === selectedIndex}
                       onClick={(event) =>
                         handleMenuItemClick(event, index, option)

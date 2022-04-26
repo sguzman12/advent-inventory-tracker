@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import logo from "../assets/img/advent_logo.png";
 import Dropdown from "../components/Dropdown";
@@ -14,8 +14,20 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
+const defaultValues = {
+  location: "",
+  status: "",
+  serial: 0,
+};
+
 function Inventory() {
-  const handleForm = (value) => {};
+  const [formData, setFormData] = useState(defaultValues);
+  const handleForm = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <>
       <InventoryForm />
