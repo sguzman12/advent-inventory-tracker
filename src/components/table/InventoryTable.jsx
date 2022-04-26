@@ -33,7 +33,7 @@ const columns = [
     headerName: "Equipment Status",
     headerAlign: "center",
     align: "center",
-    flex: 0.3,
+    flex: 0.2,
   },
 ];
 
