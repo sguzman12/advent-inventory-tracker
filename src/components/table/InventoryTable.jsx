@@ -38,9 +38,9 @@ const columns = [
 ];
 
 const data = [
-  { serialID: 1, equipLocation: "Up", equipStatus: "Cale" },
-  { serialID: 2, equipLocation: "Cale's", equipStatus: "Sucks" },
-  { serialID: 3, equipLocation: "Rectum", equipStatus: "Titties" },
+  { serialID: 1, equipLocation: "ER", equipStatus: "In Storage" },
+  { serialID: 2, equipLocation: "Central Supply", equipStatus: "Checked Out" },
+  { serialID: 3, equipLocation: "Central Supply", equipStatus: "Checked Out" },
 ];
 
 export default function InventoryTable() {
