@@ -16,15 +16,14 @@ function Dropdown(props) {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [item, setItem] = useState("Central Supply");
+  const [item, setItem] = useState(data[selectedIndex]);
 
   const handleClick = () => {
     console.info(`You clicked ${data[selectedIndex]}`);
   };
-  const handleMenuItemClick = (event, index) => {
+  const handleMenuItemClick = (event, index, option) => {
     setSelectedIndex(index);
-    setItem(data[index]);
-    console.log(item);
+    setItem(option);
     setOpen(false);
   };
   const handleToggle = () => {
@@ -37,9 +36,6 @@ function Dropdown(props) {
     setOpen(false);
   };
 
-  const handleOnChange = (event) => {
-    console.log(event);
-  };
   /* eslint-disable react/jsx-props-no-spreading */
   return (
     <>
@@ -82,8 +78,11 @@ function Dropdown(props) {
                   {data.map((option, index) => (
                     <MenuItem
                       key={option}
+                      value={option}
                       selected={index === selectedIndex}
-                      onClick={(event) => handleMenuItemClick(event, index)}
+                      onClick={(event) =>
+                        handleMenuItemClick(event, index, option)
+                      }
                     >
                       {option}
                     </MenuItem>

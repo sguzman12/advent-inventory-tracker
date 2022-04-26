@@ -1,0 +1,9 @@
+.theme--header {
+  background-color: #22223b;
+  color: azure;
+}
+
+.MuiDataGrid-row:nth-child(even) {
+  background-color: #4a4e69;
+  color: azure;
+}

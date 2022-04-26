@@ -20,7 +20,7 @@ function InventoryForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    console.log(e.target.value);
     // setItem(e)
     // props.addItem(item);
     // console.log(item);
@@ -33,27 +33,23 @@ function InventoryForm(props) {
   };
 
   const handleCancel = (event) => {
+    event.preventDefault();
     console.log("Inside handleCancel");
     console.log(event.target.value);
   };
 
+  const handleDropdown = (e) => {
+    console.log(e);
+  };
+
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      {/* <input
-        type="text"
-        id="itemID"
-        name="items"
-        value={item}
-        onChange={handleChange}
-      />
-      <input type="submit" value="Submit" /> */}
       <Box className="form">
-        {/* <img src={logo} alt="logo" /> */}
         <Box className="input">
           <Dropdown
             label="Equipment Location"
             data={locations.data}
-            onChange={handleChange}
+            // value={(e) => handleDropdown(e)}
           />
         </Box>
         <Box className="input">
